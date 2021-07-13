@@ -430,7 +430,7 @@ def enum_langtool():
 	return langtools
 
 # CHECK FOR POSSIBLE SHELL ESCAPE SEQUENCES
-def enum_shellescape(langtool):
+def enum_shellescape(langtools):
 	text = "[#] POSSIBLE CORRESPONDING SHELL ESCAPE COMMANDS TO GET ROOT [#]"
 	print_title(text)
 
