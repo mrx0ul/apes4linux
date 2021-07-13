@@ -2452,7 +2452,7 @@ if __name__ == '__main__':
 	check_sudo_ver()
 
 	# Identify Shell Escape Sequences
-	enum_shellescape()
+	enum_shellescape(langtools)
 
 	# Search ExploitDB index
 	high_chance, low_chance = search_exploits(system_info, langtools, processes, drive)
